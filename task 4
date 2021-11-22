@@ -1,0 +1,19 @@
+def isPalindrome(n):
+    return str(n)[::-1] == str(n)
+
+lychrels = 0
+
+for i in range(1,10000):
+    lychrel = True
+    for j in range(50):
+        if isPalindrome(i):
+            lychrel = False
+            break
+
+        else:
+            i += int(str(i)[::-1])
+
+    if lychrel:
+        lychrels += 1
+
+print(lychrels)
